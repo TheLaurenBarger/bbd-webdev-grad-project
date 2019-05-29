@@ -1,1 +1,19 @@
-<h1> Well shit, we're making an app!</h1>
+<!-- Navigation, I think... -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/">DisplayWarrior</a>
+    <a class="nav-item nav-link" routerLink="/edit">EditWarrior</a>
+    <a class="nav-item nav-link" routerLink="/login">Login</a>
+  </div>
+</nav>
+
+<!-- Main -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
