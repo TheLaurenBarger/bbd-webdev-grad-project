@@ -8,7 +8,7 @@ import { AuthGuard } from './_helpers';
 const routes: Routes = [
     { path: '', component: DisplayWarriorComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: EditWarriorComponent },
+    { path: 'edit', component: EditWarriorComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

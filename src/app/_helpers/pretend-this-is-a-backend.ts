@@ -7,7 +7,7 @@ let users = [
     {
         userId: 1,
         username: '1997',
-        password: 'password',
+        password: '1234',
         name: 'The Lauren',
         displayName: 'Gilgamesh',
         avatar: 'images/avatars/1.svg'
