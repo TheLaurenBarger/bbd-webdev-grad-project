@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'bbd-webdesign-grad-project'`, () => {
+  it(`should have as title 'bbd-webdev-grad-project'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('bbd-webdesign-grad-project');
+    expect(app.title).toEqual('bbd-webdev-grad-project');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to bbd-webdesign-grad-project!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to bbd-webdev-grad-project!');
   });
 });
