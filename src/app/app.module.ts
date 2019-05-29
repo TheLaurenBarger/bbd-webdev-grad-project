@@ -1,27 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+// used to create fake backend
+import { PretendThisIsABackendInterceptor, pretendThisIsABackendProvider } from './_helpers';
+
+import { appRoutingModule } from './app.routing';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
-
-// WebPage Components
-// Note: These import strings are made simpler by our added index.ts files per component
 import { DisplayWarriorComponent } from './display-warrior';
 import { LoginComponent } from './login';
 import { EditWarriorComponent } from './edit-warrior';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DisplayWarriorComponent,
-    LoginComponent,
-    EditWarriorComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        appRoutingModule
+    ],
+    declarations: [
+        AppComponent,
+        DisplayWarriorComponent,
+        LoginComponent,
+        EditWarriorComponent
+    ],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        // provider used to create fake backend
+        pretendThisIsABackendProvider
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { };
