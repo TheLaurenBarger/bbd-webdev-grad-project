@@ -11,14 +11,6 @@ router.get('', (req,res,next) => {
   return;
 });
 
-  res.status(200).json({
-    id: 'edxtcrfyvgtubhi',
-    name: 'Lauren Barger',
-    title: 'Master Breaker'
-  })
-
-})
-
 router.post("/signup", (req, res, next) => {
 
   if (req.body.email != null && req.body.password != null)
@@ -33,8 +25,6 @@ router.post("/signup", (req, res, next) => {
       message: 'Whoops! try again!'
     })
   }
-
-
 })
 
 module.exports = router;
