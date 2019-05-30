@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const userRouter = require('./routes/user')
 
 
 app.use((req,res,next) => {
@@ -9,23 +10,8 @@ app.use((req,res,next) => {
   next();
 });
 
-app.use('/user', (req,res,next) => {
 
-  res.status(200).json({
-    id: 'ewsrydtfgyuh',
-    name: 'Lauren Barger',
-    title: 'Master Breaker'
-  });
-});
-
-app.use('/warrior', (req,res,next) => {
-
-  res.status(200).json({
-
-    No: 'pushing to master without consent'
-  });
-});
-
+app.use("/api/user", userRouter);
 module.exports = app;
 
 
