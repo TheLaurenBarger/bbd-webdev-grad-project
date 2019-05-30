@@ -12,7 +12,6 @@ app.use((req,res,next) => {
 app.use('/user', (req,res,next) => {
 
   res.status(200).json({
-
     id: 'ewsrydtfgyuh',
     name: 'Lauren Barger',
     title: 'Master Breaker'
