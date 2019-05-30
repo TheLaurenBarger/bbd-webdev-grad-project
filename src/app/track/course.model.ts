@@ -1,8 +1,8 @@
-import {Section} from './section.model'
+// import {Section} from './section.model'
 
 export interface Course {
     title: string;
-    sections: Section[]
+    // sections: Section[]
     progress: number;
     xp: number;
 }
