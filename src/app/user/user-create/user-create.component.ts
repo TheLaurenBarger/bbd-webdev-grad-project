@@ -18,7 +18,7 @@ export class UserCreateComponent implements OnInit, OnDestroy {
   constructor(public userService: UserService) {}
   ngOnInit() {
     this.userService.getUser().subscribe((users) => {
-      this.user = users;
+      this.user = users.user;
     });
     console.log(this.user);
    }
