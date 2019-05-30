@@ -1,14 +1,14 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { DisplayWarriorComponent } from './display-warrior';
+import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-import { EditWarriorComponent } from './edit-warrior';
+import { RegisterComponent } from './register';
 import { AuthGuard } from './_helpers';
 
 const routes: Routes = [
-    { path: '', component: DisplayWarriorComponent, canActivate: [AuthGuard] },
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
-    { path: 'edit', component: EditWarriorComponent },
+    { path: 'register', component: RegisterComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
