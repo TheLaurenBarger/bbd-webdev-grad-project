@@ -9,18 +9,22 @@ import { MatInputModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,

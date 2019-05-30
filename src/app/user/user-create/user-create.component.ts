@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient} from '@angular/common/http'
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { User } from './user.model';
-import { UserService } from './user.service';
+import { User } from '../user.model';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-create',

@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const userRouter = require('./routes/user')
 const MockDB = require('./mockdb')
 
 app.use((req,res,next) => {
@@ -16,6 +17,7 @@ app.use('/user', (req,res,next) => {
   return;
 });
 
+app.use("/api/user", userRouter);
 
 app.use('/validate', (req,res,next) => {
   let user = MockDB.MockUserDB.find(i => i.username === req.query.username);
