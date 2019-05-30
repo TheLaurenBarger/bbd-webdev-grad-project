@@ -15,18 +15,6 @@
   font-family: arial;
 }
 
-.courseLabel {
-    display: inline;
-}
-
-.courseDescription {
-    display: inline;
-}
-
-.courseProgress {
-    display: inline;
-}
-
 .title {
   color: grey;
   font-size: 18px;
@@ -65,6 +53,16 @@
   font-size: 18px;
 }
 
+.block {
+    display: block;
+}
+
+.column {
+    float: left;
+    width: 33.3%;
+    padding: 10px;
+}
+
 a {
   text-decoration: none;
   font-size: 22px;
@@ -98,7 +96,7 @@ button:hover, a:hover {
         <hr>
 
         <div id="tracks">
-            <label>Track 1</label>
+            <label class="column">Track 1</label>
             <button class="collapsible">
             <div class="progress">
                 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
@@ -107,10 +105,42 @@ button:hover, a:hover {
             </div>
             </button>  
             <div class = "content", id="content">
-                <label class="courseLabel">Course Title 1</label>
-                <p class="courseDescription"> Blah Blah Blah Blah</p>
-                <label class="courseProgress">Done</label>
-            </div>      
+                <div class="column">
+                    <p>Course Title 1</p>
+                </div>
+                <div class="column">
+                    <p> Blah Blah Blah Blah</p>
+                </div>
+                <div class="column">
+                    <p>Done</p>
+                </div>
+            </div>    
+            <label class="column">Track 2</label>
+            <button class="collapsible">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                    80%
+                </div>
+            </div>
+            </button>  
+            <div class = "content", id="content">
+                <div class="column">
+                    <p>Course Title 2</p>
+                    <p>Course Title 2</p>
+                    <p>Course Title 2</p>
+                </div>
+                <div class="column">
+                    <p> Blah Blah Blah Blah</p>
+                    <p> Blah Blah Blah Blah</p>
+                    <p> Blah Blah Blah Blah</p>
+                </div>
+                <div class="column">
+                    <p>Done</p>
+                    <p>Done</p>
+                    <p>Done</p>
+                </div>
+            </div>    
+        </div>  
         </body>
 
         <script>
@@ -120,7 +150,7 @@ button:hover, a:hover {
             for (i = 0; i < coll.length; i++) {
               coll[i].addEventListener("click", function() {
                 this.classList.toggle("active");
-                var content = document.getElementById("content");
+                var content = this.nextElementSibling;
                 if (content.style.maxHeight){
                   content.style.maxHeight = null;
                 } else {
