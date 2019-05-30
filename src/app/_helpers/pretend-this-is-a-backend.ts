@@ -2,17 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
+import { WARRIORS } from '../fake-warriors';
 
-let users = [
-    {
-        userId: 1,
-        username: '1997',
-        password: 'test',
-        name: 'The Lauren',
-        displayName: 'Gilgamesh',
-        avatar: 'images/avatars/1.svg'
-    }
-]
+let users = WARRIORS;
+
 @Injectable()
 export class PretendThisIsABackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -28,6 +21,8 @@ export class PretendThisIsABackendInterceptor implements HttpInterceptor {
             switch (true) {
                 case url.endsWith('/users/authenticate') && method === 'POST':
                     return authenticate();
+                case url.endsWith('users/register') && method === 'POST':
+                    return register();
                 default:
                     return next.handle(request);
             }    
@@ -46,6 +41,20 @@ export class PretendThisIsABackendInterceptor implements HttpInterceptor {
                 avatar: user.avatar,
                 token: 'fake-jwt-token'
             })
+        }
+
+        function register() {
+            const user = body;
+
+            if (users.find(x => x.username === user.username)) {
+                return error('HOW DARE YOU ATTEMPT TO STEAL THE GLORY OF ANOTHER WARRIOR!?')
+            }
+
+            user.id = users.length ? Math.max(...user.map(x => x.id)) + 1 : 1;
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(user));
+
+            return ok();
         }
 
         function ok(body?) {

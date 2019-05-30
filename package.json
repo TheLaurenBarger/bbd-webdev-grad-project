@@ -1,10 +1,11 @@
 {
-    "name": "angular-7-tutorial",
+    "name": "bbd-webdev-grad-project",
     "version": "1.0.0",
     "scripts": {
         "start": "webpack-dev-server --mode development --open"
     },
     "dependencies": {
+        "@angular/cli": "^8.0.0",
         "@angular/common": "^7.2.13",
         "@angular/compiler": "^7.2.13",
         "@angular/core": "^7.2.13",

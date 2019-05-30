@@ -9,9 +9,10 @@ import { fakeBackendProvider } from './_helpers';
 import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home';
+import { DisplayWarriorComponent } from './display-warrior';
 import { LoginComponent } from './login';
-import { RegisterComponent } from './register';
+import { EditWarriorComponent } from './edit-warrior';
+import { WarriorComponent } from './warrior/warrior.component';
 
 @NgModule({
     imports: [
@@ -22,9 +23,10 @@ import { RegisterComponent } from './register';
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
+        DisplayWarriorComponent,
         LoginComponent,
-        RegisterComponent
+        EditWarriorComponent,
+        WarriorComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
