@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bbd-webdev-grad-project": {
+    "HiveGameApp": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bbd-webdev-grad-project",
+            "outputPath": "dist/HiveGameApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,6 +27,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+              "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+              "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -62,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bbd-webdev-grad-project:build"
+            "browserTarget": "HiveGameApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "bbd-webdev-grad-project:build:production"
+              "browserTarget": "HiveGameApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bbd-webdev-grad-project:build"
+            "browserTarget": "HiveGameApp:build"
           }
         },
         "test": {
@@ -84,6 +91,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -107,7 +115,7 @@
         }
       }
     },
-    "bbd-webdev-grad-project-e2e": {
+    "HiveGameApp-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +124,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "bbd-webdev-grad-project:serve"
+            "devServerTarget": "HiveGameApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "bbd-webdev-grad-project:serve:production"
+              "devServerTarget": "HiveGameApp:serve:production"
             }
           }
         },
@@ -136,5 +144,5 @@
       }
     }
   },
-  "defaultProject": "bbd-webdev-grad-project"
+  "defaultProject": "HiveGameApp"
 }
