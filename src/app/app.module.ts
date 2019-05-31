@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SignupComponent } from './auth/signup/signup.component';
     UserCreateComponent,
     HeaderComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
