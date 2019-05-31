@@ -20,6 +20,7 @@ import { ImagePickerComponent } from './auth/image-picker/image-picker.component
 import { CreateUserComponent } from './auth/create-user/create-user.component'; 
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ViewUserComponent } from './auth/view-user/view-user.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     LoginComponent,
     SignupComponent,
     ImagePickerComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    ViewUserComponent
   ],
   imports: [
     BrowserModule,
