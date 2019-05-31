@@ -16,7 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { ImagePickerComponent } from './auth/image-picker/image-picker.component';
+import { CreateUserComponent } from './auth/create-user/create-user.component'; 
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { SignupComponent } from './auth/signup/signup.component';
     UserCreateComponent,
     HeaderComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ImagePickerComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MDBBootstrapModule.forRoot(),
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
