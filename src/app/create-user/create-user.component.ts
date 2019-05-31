@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-create-user',
@@ -6,5 +7,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-user.component.scss']
 })
 export class CreateUserComponent {
-
+   
 }
