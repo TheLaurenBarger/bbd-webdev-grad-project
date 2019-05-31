@@ -27,4 +27,27 @@ router.post("/signup", (req, res, next) => {
   }
 })
 
+router.use('/login', (req,res,next) => {
+  console.log(req.body.password)
+  if (req.body.username != null && req.body.password !=null)
+  {
+  let authUser = MockDB.MockUserDB.find(i => i.username === req.query.username);
+    if (req.query.password !== authUser.password)
+    {
+      return res.status(401).json({
+        message: "Auth failed"
+      });
+    }
+    else{
+    const token = authUser.username;
+    res.send(200).json({
+      token: token,
+      expiresIn: 3600
+    })
+    }
+  }
+
+});
+
+
 module.exports = router;
